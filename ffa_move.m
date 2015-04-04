@@ -14,8 +14,7 @@ for i=1:n,
     k=randint(1,1,[1,100]);
 	l=randint(1,1,[1,100]);
 	rx=abs(nsx(i,k)-nsx(j,l));
-	ry=abs(nsy(i,k)-nsy(j,l)); %Created by Draco Maxwell!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	
+	ry=abs(nsy(i,k)-nsy(j,l)); 
 	rx1=abs(nsx(i,l)-nsx(j,k));
 	ry1=abs(nsy(i,l)-nsy(j,k));
 	

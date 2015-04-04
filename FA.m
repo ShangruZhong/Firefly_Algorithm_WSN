@@ -3,12 +3,12 @@ clear;
 w=100;   %
 d=100;   %dimensions of each solutions(firefly)
 point=d;  %the point covered by WSN 100*100
-r=7; %wsn的覆盖半径r=7
+r=7; %wsn?母??前刖秗=7
 q=0;
 % parameters [n N_iteration alpha betamin gamma]
 para=[25 500 0.7 0.2 1];
 
-%初始化解的边界，第i个解满足1*d矩阵
+
 Ub=ones(1,d).*w; %/*upper bounds of the parameters. */
 Lb=zeros(1,d);   %/*lower bound of the parameters.*/
 
