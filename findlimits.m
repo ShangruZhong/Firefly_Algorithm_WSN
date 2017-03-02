@@ -1,5 +1,9 @@
-% Make sure the fireflies are within the bounds/limits
 function [nsx,nsy]=findlimits(n,nsx,nsy,Lb,Ub)
+%% Make sure the fireflies are within the bounds/limits
+% @author: Shangru Zhong
+% @email: draco.mystack@gmail.com
+% @date: 11/01/2013
+
 for i=1:n,
  %-------nsx-----------------
      % Apply the lower bound

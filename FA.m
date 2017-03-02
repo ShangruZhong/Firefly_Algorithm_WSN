@@ -1,52 +1,33 @@
+%% Main Function
+% @author: Shangru Zhong
+% @email: draco.mystack@gmail.com
+% @date: 11/01/2013
+clc;
 clear;   
 
-w=100;   %
-d=100;   %dimensions of each solutions(firefly)
-point=d;  %the point covered by WSN 100*100
-r=7; %wsn?ĸ??ǰ뾶r=7
-q=0;
-% parameters [n N_iteration alpha betamin gamma]
-para=[25 500 0.7 0.2 1];
+%% Parameters Setting
+w = 100;   
+d = 100;   % dimensions of each solutions(firefly)
+point = d;  %the sensor point covered by WSN 100*100
+r = 7; % radius of sensor point coverage region in WSN
+q = 0;
+para = [25 5 0.7 0.2 1];% parameters [n N_iteration alpha betamin gamma]
 
-
-Ub=ones(1,d).*w; %/*upper bounds of the parameters. */
-Lb=zeros(1,d);   %/*lower bound of the parameters.*/
+Ub = ones(1,d).*w; %/*upper bounds of the parameters. */
+Lb = zeros(1,d);   %/*lower bound of the parameters.*/
 
 % Initial random guess
 u0=(Lb+Ub)/2; 
 
+%% Wireless Sensor Network Deployment using Fireflies Algorithm
 [ux,uy,fval,NumEval,maxzn]=ffa_wsn(u0,Lb,Ub,para,q);
 
-
-% Display results
-draw(ux,uy,100,7)
-
-bestsolutionx=ux
-bestsolutiony=uy
-bestojb=fval
-total_number_of_function_evaluations=NumEval
+%% Results Visualization
+draw(ux, uy, 100, 7)
+bestsolutionx = ux;
+bestsolutiony = uy;
+bestojb = fval
+total_number_of_function_evaluations = NumEval
 
 
-
-
-%%% End of the part to be modified -------------------%%%
-
-%%% --------------------------------------------------%%%
-%%% Do not modify the following codes unless you want %%%
-%%% to improve its performance etc                    %%%
-% -------------------------------------------------------
-% ===Start of the Firefly Algorithm Implementation ======
-% Inputs: fhandle => @cost (your own cost function,
-%                   can be an external file  )
-%     nonhandle => @constraint, all nonlinear constraints
-%                   can be an external file or a function
-%         Lb = lower bounds/limits
-%         Ub = upper bounds/limits
-%   para == optional (to control the Firefly algorithm)
-% Outputs: nbest   = the best solution found so far
-%          fbest   = the best objective value
-%      NumEval = number of evaluations: n*MaxGeneration
-% Optional:
-% The alpha can be reduced (as to reduce the randomness)
-% ---------------------------------------------------------
 
