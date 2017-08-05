@@ -1,5 +1,7 @@
 ## Wireless Sensor Network (WSN) Deployment using Fireflies Algorithm
 
+![](demo.jpg)
+
 ### Code Description
 
 - `FA.m`: the main function
